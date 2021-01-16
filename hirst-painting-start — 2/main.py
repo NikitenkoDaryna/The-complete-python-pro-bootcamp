@@ -11,7 +11,9 @@ import random as r
 #
 # print(rgb_colors)
 henry = t.Turtle()
-
+henry.penup()
+henry.hideturtle()
+henry.speed("fastest")
 rgb_colours = [(202, 164, 110), (236, 239, 243), (149, 75, 50), (222, 201, 136), (53, 93, 123), (170, 154, 41),
                (138, 31, 20), (134, 163, 184), (197, 92, 73), (47, 121, 86), (73, 43, 35), (145, 178, 149),
                (14, 98, 70), (232, 176, 165), (160, 142, 158), (54, 45, 50), (101, 75, 77), (183, 205, 171),
@@ -22,14 +24,14 @@ rgb_colours = [(202, 164, 110), (236, 239, 243), (149, 75, 50), (222, 201, 136),
 def draw_dotted_line(number_of_dashes, step, radius):
     for _ in range(0, number_of_dashes):
         henry.dot(radius, rgb_colours[r.randint(0, len(rgb_colours) - 1)])
-        henry.penup()
+        #henry.penup()
         henry.forward(step)
 
 
 def draw_picture(height, width, radius, step):
     for _ in range(0, height):
         draw_dotted_line(width, step, radius)
-        henry.penup()
+       # henry.penup()
         henry.goto(henry.pos() + (-500, step))
 
 
